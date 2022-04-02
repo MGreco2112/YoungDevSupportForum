@@ -4,6 +4,7 @@ import com.auth.authentication.auth.User;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Profile {
@@ -15,6 +16,9 @@ public class Profile {
     private String address;
     private String city;
     private String phone;
+
+    @OneToMany(mappedBy = "profile", fetch = FetchType.LAZY)
+    private List<Content> contentList;
 
     @OneToOne
     @JoinColumn(
@@ -81,5 +85,13 @@ public class Profile {
 
     public void setCity(String city) {
         this.city = city;
+    }
+
+    public List<Content> getContentList() {
+        return contentList;
+    }
+
+    public void setContentList(List<Content> contentList) {
+        this.contentList = contentList;
     }
 }
