@@ -61,6 +61,11 @@ public class ProfileController {
         return ResponseEntity.ok(profile.get());
     }
 
+    @GetMapping("/city/{city}")
+    public List<Profile> findProfilesByCity(@PathVariable String city) {
+        return repository.findAllAllByCity(city);
+    }
+
     @PostMapping
     public ResponseEntity<Profile> createNewProfile(@RequestBody Profile profile) {
         User currentUser = userService.getCurrentUser();
