@@ -1,5 +1,7 @@
 package com.auth.authentication.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonIncludeProperties;
 
 import javax.persistence.*;
@@ -17,7 +19,7 @@ public class Content {
             name = "profile_id",
             referencedColumnName = "id"
     )
-    @JsonIncludeProperties("content")
+    @JsonIncludeProperties({"id", "name"})
     private Profile profile;
 
     public Content() {
