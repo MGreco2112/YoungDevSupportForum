@@ -10,4 +10,15 @@ import java.util.Optional;
 @Repository
 public interface RoleRepository extends JpaRepository<Role, Long> {
     Optional<Role> findByName(ERole name);
+
+    /*
+    @Query(value = "select count(*) from role",
+            nativeQuery = true)
+    int isRoleEmpty();
+
+    @Query(value = "Insert into role (name) name values(:roleName) ",
+            nativeQuery = true)
+    void insertRoles(@Param("roleName") ERole role);
+     */
+
 }

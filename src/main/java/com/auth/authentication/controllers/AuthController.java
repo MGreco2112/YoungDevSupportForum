@@ -21,6 +21,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
+import java.sql.PreparedStatement;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -54,6 +55,10 @@ public class AuthController {
 
         Set<String> strRoles = signupRequest.getRoles();
         Set<Role> roles = new HashSet<>();
+
+        for (ERole role : ERole.values()) {
+            System.out.println(role);
+        }
 
         if (strRoles == null) {
             Role userRole = roleRepository.findByName(ERole.ROLE_USER).orElseThrow(() -> new RuntimeException("Error: Role is not found"));
