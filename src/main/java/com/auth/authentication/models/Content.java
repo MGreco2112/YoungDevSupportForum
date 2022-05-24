@@ -8,6 +8,7 @@ import javax.persistence.*;
 
 @Entity
 public class Content {
+    //todo refactor to display the most recent topics and replies from all users the userprofile contributed to
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
