@@ -87,6 +87,12 @@ public class ProfileController {
         return new ResponseEntity<>(newProfile, HttpStatus.CREATED);
     }
 
+    //Create Delete Mapping
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> removeProfile(@PathVariable Long id){
+        repository.deleteById(id);
+        return new ResponseEntity<>("The Profile has been deleted", HttpStatus.OK);
+    }
 
 
 }
