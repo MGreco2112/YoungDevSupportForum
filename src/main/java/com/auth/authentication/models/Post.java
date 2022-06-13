@@ -22,7 +22,7 @@ public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String body;
+    private String message;
     private String title;
     private String topic;
     private Set<Post> replies;
@@ -30,9 +30,9 @@ public class Post {
     public Post() {
     }
 
-    public Post(Long id, String body, String title, String topic) {
+    public Post(Long id, String message, String title, String topic) {
         this.id = id;
-        this.body = body;
+        this.message = message;
         this.title = title;
         this.topic = topic;
     }
@@ -45,12 +45,12 @@ public class Post {
         this.id = id;
     }
 
-    public String getBody() {
-        return body;
+    public String getMessage() {
+        return message;
     }
 
-    public void setBody(String body) {
-        this.body = body;
+    public void setMessage(String message) {
+        this.message = message;
     }
 
     public String getTitle() {

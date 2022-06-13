@@ -42,8 +42,8 @@ public class PostController {
         if (updates.getTitle() != null) {
             selPost.setTitle(updates.getTitle());
         }
-        if (updates.getBody() != null) {
-            selPost.setBody(updates.getBody());
+        if (updates.getMessage() != null) {
+            selPost.setMessage(updates.getMessage());
         }
         if (updates.getTopic() != null) {
             selPost.setTopic(updates.getTopic());
