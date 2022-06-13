@@ -72,7 +72,7 @@ public class ContentController {
         return new ResponseEntity<>(repository.save(content), HttpStatus.CREATED);
     }
 
-   //Create Delete Mapping
+    //Create Delete Mapping
     @DeleteMapping("/{id}")
     public ResponseEntity<String> removeContent(@PathVariable Long id){
         repository.deleteById(id);
